@@ -1,0 +1,28 @@
+body{
+    background-color: antiquewhite;
+}
+
+.header,.footerrow,.home-btn{
+    background-color: #cc5b66;
+}
+
+
+.invoice {
+    position: fixed;
+    display: block;
+    top: 3rem;
+    left: 65%;
+}
+
+.itemsOrdered{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.btn:hover{
+    border: 1px solid black;
+}
+
+.fa-trash:hover{
+    cursor: pointer;
+}

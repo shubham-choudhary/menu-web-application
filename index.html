@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Menu</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <div class="row header">
+          <div class="col-sm-4 offset-sm-1">
+            <h3>ORDER MENU</h3>
+          </div>
+          <div class="col-sm-1 offset-sm-1">
+            <button class="btn home-btn">
+              Home
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <aside class="menu-header">
+            <div>
+              <h3>All</h3>
+            </div>
+            <div>
+              <a href="#oriental">Oriental</a>
+            </div>
+            <div>
+                <a href="#chineseCombo">Chinese Combo</a>
+            </div>
+            <div>
+              <a href="#chineseStarter">Chinese Starter</a>
+            </div>
+            <div>
+              <a href="#salads">Salads</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="col-sm-6">
+          <section>
+            <div class="card" id="oriental">
+              <div class="card-header text-center header">
+                Oriental
+              </div>
+              <div class="card-body">
+                <div data-bind="foreach: oriental">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div data-bind="text: name"></div>
+                      <div data-bind="visible: description">
+                        <span data-bind="text: description" class="text-primary"></span>
+                      </div>
+                    </div>
+                    <span class="fa fa-minus-square col-sm-1" data-bind="click: $parent.decreaseOrderQuantity"></span>
+                    <div data-bind="visible: quantityOrdered">
+                      
+                      <span class="col-sm-1" data-bind="text: quantityOrdered"></span>
+                    </div>
+                    <span class="fa fa-plus-square col-sm-1" data-bind="click: $parent.increaseOrderQuantity"></span>
+                    <div class="col-sm-2">
+                      <i class="fa fa-inr"><span data-bind="text: price"></span></i>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+            <div class="card" id="chineseCombo">
+              <div class="card-header text-center header">
+                Chinese Combo
+              </div>
+              <div class="card-body">
+                  <div data-bind="foreach: chineseCombos">
+                      <div class="row">
+                        <div class="col-sm-7">
+                          <div data-bind="text: name"></div>
+                          <div data-bind="visible: description">
+                            <span data-bind="text: description" class="text-primary"></span>
+                          </div>
+                        </div>
+                        <span class="fa fa-minus-square col-sm-1" data-bind="click: $parent.decreaseOrderQuantity"></span>
+                        <div data-bind="visible: quantityOrdered">
+                          
+                          <span class="col-sm-1" data-bind="text: quantityOrdered"></span>
+                        </div>
+                        <span class="fa fa-plus-square col-sm-1" data-bind="click: $parent.increaseOrderQuantity"></span>
+                        <div class="col-sm-2">
+                          <i class="fa fa-inr"><span data-bind="text: price"></span></i>
+                        </div>
+                      </div>
+                      <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="chineseStarter">
+              <div class="card-header text-center header">
+                Chinese Starter
+              </div>
+              <div class="card-body">
+                  <div data-bind="foreach: chineseStarter">
+                      <div class="row">
+                        <div class="col-sm-7">
+                          <div data-bind="text: name"></div>
+                          <div data-bind="visible: description">
+                            <span data-bind="text: description" class="text-primary"></span>
+                          </div>
+                        </div>
+                        <span class="fa fa-minus-square col-sm-1" data-bind="click: $parent.decreaseOrderQuantity"></span>
+                        <div data-bind="visible: quantityOrdered">
+                          
+                          <span class="col-sm-1" data-bind="text: quantityOrdered"></span>
+                        </div>
+                        <span class="fa fa-plus-square col-sm-1" data-bind="click: $parent.increaseOrderQuantity"></span>
+                        <div class="col-sm-2">
+                          <i class="fa fa-inr"><span data-bind="text: price"></span></i>
+                        </div>
+                      </div>
+                      <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="salads">
+              <div class="card-header text-center header">
+                Salads
+              </div>
+              <div class="card-body">
+                  <div data-bind="foreach: salads">
+                      <div class="row">
+                        <div class="col-sm-7">
+                          <div data-bind="text: name"></div>
+                          <div data-bind="visible: description">
+                            <span data-bind="text: description" class="text-primary"></span>
+                          </div>
+                        </div>
+                        <span class="fa fa-minus-square col-sm-1" data-bind="click: $parent.decreaseOrderQuantity"></span>
+                        <div data-bind="visible: quantityOrdered">
+                          
+                          <span class="col-sm-1" data-bind="text: quantityOrdered"></span>
+                        </div>
+                        <span class="fa fa-plus-square col-sm-1" data-bind="click: $parent.increaseOrderQuantity"></span>
+                        <div class="col-sm-2">
+                          <i class="fa fa-inr"><span data-bind="text: price"></span></i>
+                        </div>
+                      </div>
+                      <hr>
+                    </div>
+                </div>
+            </div>
+          </section>
+        </div> 
+        
+        <aside>
+          <div class="col-sm-4 invoice">            
+            <div class="card">
+                <div class="card-header header">
+                  <h4 class="pull-left">Your Cart</h4>
+                  <span class="fa fa-trash fa-2x pull-right" data-bind="click: emptyCart"></span>
+                </div>
+                <div class="card-body itemsOrdered">
+                    <div data-bind="foreach: itemsOrdered">
+                        <div class="row">
+                            <div data-bind="text: name" class="col-sm-4"></div>
+                            <span class="col-sm-1">x</span>                          
+                            <span class="col-sm-2" data-bind="text: quantityOrdered"></span>
+                            <div class="col-sm-4">
+                              <i class="fa fa-inr"><span data-bind="text: price"></span></i>
+                          </div>
+                        </div>
+                        <hr>
+                    </div>
+                  </div>
+              </div>
+                <div class="card-footer">
+                  <div class="row">
+                    <div class="col-sm-6"> 
+                      <h3>Total</h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <span data-bind="text: totalAmount" class="pull-right"></span>
+                    </div>
+                  </div>
+                <button class="btn btn-block header">Checkout</button>
+                </div>
+            </div>
+          </div>
+        </aside>
+            
+        
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <div class="row footerrow">
+          <div class="col-sm-4 mt-5">
+            <h4>Information</h4>
+            <ul class="m-2 p-0">
+              <li>
+                <a href="index.html" class="text-dark">Home</a>
+                </li>
+                <li><a href="index.html" class="text-dark">About Us</a></li>
+                <li>
+                  <a href="index.html" class="text-dark">FAQ</a>
+                </li>
+                <li>
+                  <a href="index.html" class="text-dark">Services</a>
+                </li>
+                <li>
+                    <a href="index.html" class="text-dark">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-sm-4 mt-5">
+            <h4>Tasty Food</h4>
+            <h6 class="info">Its Yummmmm!!</h6>
+            <!--  <div class="social"> -->
+              <i class="fa fa-facebook-official fa-2x front"></i>
+            <!-- </div>  -->
+            <!-- <div class="social"><i class="fa fa-facebook-official fa-2x back"></i></div> -->
+            <i class="fa fa-linkedin-square fa-2x"></i>
+            <i class="fa fa-twitter-square fa-2x"></i>
+            <i class="fa fa-instagram fa-2x"></i>
+          </div>
+          <div class="col-sm-4 mt-5">
+            <h4>Contact</h4>
+            <div class="info">
+              <i class="fa fa-phone"></i>
+              <span>+91 1234567890</span>
+            </div>
+            <div class="info">
+                <i class="fa fa-map-marker"></i>
+                <span>Kalpakkam, MG road Whitefield, Delhi, India</span>
+                <span>654321</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="app.js">
+    </script>
+    
+  </body>
+  </html>
